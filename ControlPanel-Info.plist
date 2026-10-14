@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<!--
+  Keys that Xcode's generated Info.plist cannot express. Xcode merges this file
+  with the generated one (GENERATE_INFOPLIST_FILE stays on).
+
+  Local network privacy (TN3179) gates every local-network feature in the app:
+  printer discovery and IPP, raw-socket receipt printing, port checks, and the
+  device scanner. NSBonjourServices must list every Bonjour type the app
+  browses or resolves, or macOS can deny the browse without asking.
+-->
+<dict>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Control Panel finds printers and other devices on your network, prints to them directly, and checks which ports and devices are reachable.</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_ipp._tcp</string>
+		<string>_ipps._tcp</string>
+		<string>_pdl-datastream._tcp</string>
+		<string>_printer._tcp</string>
+		<string>_scanner._tcp</string>
+		<string>_uscan._tcp</string>
+		<string>_airplay._tcp</string>
+		<string>_raop._tcp</string>
+		<string>_companion-link._tcp</string>
+		<string>_googlecast._tcp</string>
+		<string>_hap._tcp</string>
+		<string>_homekit._tcp</string>
+		<string>_smb._tcp</string>
+		<string>_afpovertcp._tcp</string>
+		<string>_ssh._tcp</string>
+		<string>_sftp-ssh._tcp</string>
+		<string>_http._tcp</string>
+		<string>_spotify-connect._tcp</string>
+		<string>_rdlink._tcp</string>
+	</array>
+</dict>
+</plist>
